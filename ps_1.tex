@@ -59,7 +59,7 @@ and
         \textbf{Answer:}
         
         \textbf{For the first equation,}
-        By the definition of a valid probability density function (PDF),
+        By the definition of a valid probability density function,
         \[
         \int_{-\infty}^{\infty} f_X(x) \, dx = 1
         \]
@@ -68,8 +68,8 @@ and
         \int_{0}^{2} (a + bx) \, dx = 1 
         &\implies \left[ ax + \frac{b}{2}x^2 \right]_{x=0}^{x=2} = 1 \\
         &\implies a(2) + \frac{b}{2}(2)^2 - a(0) - \frac{b}{2}(0)^2 = 1 \\
-        &\implies 2a + 2b = 1.
         \end{align*}
+        \[             \boxed{\implies 2a + 2b = 1.}        \]
 
         \textbf{For the second equation,}
         
@@ -83,11 +83,39 @@ and
         &\implies \left[ \frac{ax^2}{2} + \frac{bx^3}{3} \right]_{x=0}^{x=2} = \frac{7}{6} \\
         &\implies \frac{a(2)^2}{2} + \frac{b(2)^3}{3} - \frac{a(0)^2}{2} - \frac{b(0)^3}{3} = \frac{7}{6} \\
         &\implies \frac{4a}{2} + \frac{8b}{3} = \frac{7}{6} \\
-        &\implies 2a + \frac{8b}{3} = \frac{7}{6}.
         \end{align*}
+        \[             \boxed{\implies 2a + \frac{8b}{3} = \frac{7}{6}.}        \]
     \end{list}
     
     \item Solve the system and determine the values of $a$ and $b$.
+    \begin{list}{}{} \item[] 
+        \textbf{Answer:}
+        
+        From the first equation, we isolate $2a$:
+        \begin{align*}
+        2a + 2b &= 1 \\
+        2a &= 1 - 2b
+        \end{align*}
+        Thus substituting $2a = 1 - 2b$ into the second equation, 
+        \begin{align*}
+        (1 - 2b) + \frac{8b}{3} &= \frac{7}{6} \\
+        1 - \frac{6b}{3} + \frac{8b}{3} &= \frac{7}{6} \\
+        1 + \frac{2b}{3} &= \frac{7}{6} \\
+        \frac{2b}{3} &= \frac{7}{6} - \frac{6}{6} \\
+        \frac{2b}{3} &= \frac{1}{6} \\
+        2b &= \frac{3}{6} \\
+        b &= \frac{1}{4}
+        \end{align*}
+        Substituting $b = \frac{1}{4}$ back into the first equation,
+        \begin{align*}
+        2a &= 1 - 2\left(\frac{1}{4}\right) \\
+        2a &= 1 - \frac{1}{2} \\
+        2a &= \frac{1}{2} \\
+        a &= \frac{1}{4}
+        \end{align*}
+        Therefore, the values of $a$ and $b$ are
+        \[        \boxed{ a = \frac{1}{4}, \quad b = \frac{1}{4}.}\]
+    \end{list}
     \item Prove that the resulting function is a valid probability density function on its stated support.
     \vspace{0.5em}
     \begin{list}{}{} \item[] 
@@ -108,17 +136,20 @@ and
         \end{enumerate}
 
         \vspace{0.5em}
-        \textbf{For the Non-negativity condition ($f_X(x) \ge 0$):}
-            \quad For $x \in (0, 2)$: Since $x > 0$, we have $1 + x > 1 > 0$. Thus,
+        \textbf{For the Non-negativity condition}\\
+        \[  f_X(x) \ge 0.\]
+            \quad For $x \in (0, 2)$: 
+            \\Since $x > 0$, we have $1 + x > 1 > 0$. Thus,
             \[f_X(x) = \frac{1}{4}(1 + x) > 0.\]
             \quad For $x \notin (0, 2)$:
             \[f_X(x) = 0 \ge 0.\]
         \noindent Thus, $f_X(x) \ge 0$ holds for all $x \in \mathbb{R}$.
 
-        \vspace{0.5em}
-        \textbf{For the Normalization condition ($\int_{-\infty}^{\infty} f_X(x) \, dx = 1$):}
-        
-        Evaluating the total area under $f_X(x)$,
+       \noindent\textbf{For the Normalization condition}
+        \[
+        \int_{-\infty}^{\infty} f_X(x) \, dx = 1
+        \]
+        Evaluating the total area under $f_X(x)$:
         \begin{align*}
         \int_{-\infty}^{\infty} f_X(x) \, dx 
         &= \int_{0}^{2} \left( \frac{1}{4} + \frac{1}{4}x \right) dx \\
@@ -126,14 +157,112 @@ and
         &= \left( \frac{1}{4}(2) + \frac{1}{8}(2)^2 \right) - \left( \frac{1}{4}(0) + \frac{1}{8}(0)^2 \right) \\
         &= \left( \frac{1}{2} + \frac{4}{8} \right) - 0 \\
         &= \frac{1}{2} + \frac{1}{2} \\
-        &= 1.
+        &= 1
         \end{align*}
+        Therefore, $\int_{-\infty}^{\infty} f_X(x) \, dx = 1$.
+
         
-        Since both conditions---non-negativity ($f_X(x) \ge 0$ for all $x \in \mathbb{R}$) and normalization ($\int_{-\infty}^{\infty} f_X(x) \, dx = 1$)---are satisfied, $f_X(x)$ is formally proven to be a valid probability density function on its stated support.
+        Since both conditions are satisfied, $f_X(x)$ is formally proven to be a valid probability density function on its stated support.
     \end{list}
     \item Derive the complete piecewise cumulative distribution function $F_X(x)$.
+  \vspace{0.5em}
+    \begin{list}{}{} \item[] 
+        \textbf{Answer:}
+        
+        The cumulative distribution function is defined as 
+        \[ F_X(x) = \int_{-\infty}^{x} f_X(t) \, dt.\]
+        
+        Then, for $x \le 0$:
+        \[        F_X(x) = \int_{-\infty}^{x} 0 \, dt = 0        \]
+        For $0 < x < 2$:
+        \begin{align*}
+        F_X(x) &= \int_{0}^{x} \left(\frac{1}{4} + \frac{t}{4}\right) dt \\
+        &= \left[ \frac{t}{4} + \frac{t^2}{8} \right]_{0}^{x} \\
+         F_X(x)&= \frac{x}{4} + \frac{x^2}{8}
+        \end{align*}
+        For $x \ge 2$:
+        \begin{align*}
+        F_X(x) &= \int_{0}^{2} \left(\frac{1}{4} + \frac{t}{4}\right) dt + \int_{2}^{x} 0 \, dt \\
+        &= \left[ \frac{t}{4} + \frac{t^2}{8} \right]_{0}^{2} + 0 \\
+        &= \left( \frac{2}{4} + \frac{4}{8} \right) \\
+         F_X(x) &= 1
+        \end{align*}
+        Therefore, the cumulative distribution function is
+        \[        \boxed{ F_X(x) =
+        \begin{cases}
+        0, & x \le 0, \\
+        \dfrac{x}{4} + \dfrac{x^2}{8}, & 0 < x < 2, \\
+        1, & x \ge 2.
+        \end{cases}}
+        \]
+    \end{list}
     \item Derive $\mathbb{E}(X^2)$ and $\text{Var}(X)$.
+   \vspace{0.5em}
+    \begin{list}{}{} \item[] 
+        \textbf{Answer:}
+        
+        From $a = \frac{1}{4}$ and $b = \frac{1}{4}$, then
+        \[ f_X(x) = \frac{1+x}{4}. \]
+
+        \begin{align*}
+        \mathbb{E}(X^2) &= \int_{-\infty}^{\infty} x f_X(x) \, dx \\
+        &= \int_{0}^{2} x^2 \left( \frac{1+x}{4} \right) \, dx \\
+        &= \frac{1}{4} \int_{0}^{2} (x^2 + x^3) \, dx \\
+        &= \frac{1}{4} \left[ \frac{x^3}{3} + \frac{x^4}{4} \right]_0^2 \\
+        &= \frac{1}{4} \left( \frac{8}{3} + 4 \right) \\
+        &= \frac{1}{4} \left( \frac{20}{3} \right)\\
+        \mathbb{E}(X^2) &= \frac{5}{3}
+        \end{align*}
+
+        Since $\mathbb{E}(X) = \frac{7}{6}.$ and $\mathbb{E}(X^2) = \frac{5}{3}$, then
+        \begin{align*}
+        \text{Var}(X) &= \mathbb{E}(X^2) - [\mathbb{E}(X)]^2 \\
+        &= \frac{5}{3} - \left( \frac{7}{6} \right)^2 \\
+        &= \frac{60}{36} - \frac{49}{36} \\
+        \text{Var}(X) &= \frac{11}{36}
+        \end{align*}
+      Therefore,
+        \[ \boxed{\mathbb{E}(X^2) = \dfrac{5}{3} \quad \text{and} \quad \text{Var}(X) = \dfrac{11}{36}.}\]
+    \end{list}
     \item Let $m$ denote the median of $X$. Determine $m$ exactly and decide whether $m$ is less than, equal to, or greater than $\mathbb{E}(X)$. Justify your conclusion analytically.
+  \vspace{0.5em}
+    \begin{list}{}{} \item[]
+        \textbf{Answer:}
+        
+        By definition, the median $m$ satisfies $F_X(m) = 0.5$. Since $0.5$ falls within $ 0<x<1$, $m$ necessarily lies inside  $0<x<2$.
+        \begin{align*}
+        F_X(m) &= 0.5 \\
+        \frac{m}{4} + \frac{m^2}{8} &= \frac{1}{2} \\
+        2m + m^2 &= 4 \\
+        m^2 + 2m - 4 &= 0
+        \end{align*}
+        Solving the quadratic formula, then
+        \begin{align*}
+        m &= \frac{-2 \pm \sqrt{2^2 - 4(1)(-4)}}{2(1)} \\
+        &= \frac{-2 \pm \sqrt{4 + 16}}{2} \\
+        &= \frac{-2 \pm \sqrt{20}}{2} \\
+        &= \frac{-2 \pm 2\sqrt{5}}{2} \\
+        m &= -1 \pm \sqrt{5}
+        \end{align*}
+        Thus,
+        \[ \boxed{m = -1 + \sqrt{5} \quad \text{or} \quad m = -1 - \sqrt{5}.}\]
+        Since the value $m = -1 + \sqrt{5} \notin 0<x<2, $ then $ m = -1 - \sqrt{5}.$
+        
+        Thus evaulating $\sqrt{5} - 1 > \mathbb{E}(X) = \frac{7}{6}$,
+        \begin{align*}
+        \sqrt{5} - 1 &> \frac{7}{6} \\
+        \sqrt{5} &> \frac{7}{6} + \frac{6}{6} \\
+        \sqrt{5} &> \frac{13}{6}
+        \end{align*}
+        Note that both inequalities are positive. Hence,
+        \begin{align*}
+        (\sqrt{5})^2 &> \left(\frac{13}{6}\right)^2 \\
+        5 &> \frac{169}{36} \\
+        \frac{180}{36} &> \frac{169}{36}
+        \end{align*}
+        Since the inequality holds true, therefore 
+        \[  \boxed{{m > \mathbb{E}(X)}.} \]
+    \end{list}
 \end{enumerate}
 \vspace{1.5em}
 
@@ -158,8 +287,8 @@ where the probabilities $p_1, \dots, p_n$ are not assumed to be equal. Define
         M_{X_i}(t) &= \sum_{x \in \{0, 1\}} e^{tx} P(X_i = x) \\
         &= e^{t(0)} P(X_i = 0) + e^{t(1)} P(X_i = 1) \\
         &= 1 \cdot (1 - p_i) + e^t p_i \\
-        M_{X_i}(t) &= (1 - p_i) + p_i e^t.
-        \end{align*}
+         \end{align*}
+         \[             \boxed{M_{X_i}(t) = (1 - p_i) + p_i e^t.}        \]
     \end{list}
     \item Using independence, derive $M_{S_n}(t)$.
     \vspace{0.5em}
@@ -176,9 +305,9 @@ where the probabilities $p_1, \dots, p_n$ are not assumed to be equal. Define
         M_{S_n}(t) &= \prod_{i=1}^n M_{X_i}(t).
         \end{align*}
         From (a), the Bernoulli moment-generating function is $M_{X_i}(t) = 1 - p_i + p_i e^t$. Hence,
-        \[        M_{S_n}(t) = \prod_{i=1}^n \left(1 - p_i + p_i e^t\right).\]
+        \[         \boxed{M_{S_n}(t) = \prod_{i=1}^n \left(1 - p_i + p_i e^t\right).}\]
     \end{list}
-   \item Give a necessary and sufficient condition on $p_1$, \dots, $p_n$ under which $S_n$ has a $\text{Binomial}(n, p)$ distribution for some $p$. Justify your answer by comparing MGFs.
+   \item Give a necessary and sufficient condition on $p_1, \dots, p_n$ such that $S_n \sim \text{Binomial}(n, p)$ for some $p$. Justify your answer by comparing MGFs.
     
     \vspace{0.5em}
     \begin{list}{}{} \item[] 
@@ -211,8 +340,9 @@ where the probabilities $p_1, \dots, p_n$ are not assumed to be equal. Define
         \begin{align*}
         \mathbb{E}(S_n) &= \mathbb{E}\left(\sum_{i=1}^n X_i\right) \\
         &= \sum_{i=1}^n \mathbb{E}(X_i) \\
-       \mathbb{E}(S_n) &= \sum_{i=1}^n p_i.
         \end{align*}
+        \[             \boxed{\mathbb{E}(S_n) = \sum_{i=1}^n p_i.}
+        \]
 
         \noindent\textbf{For the variance:}
         
@@ -220,8 +350,8 @@ where the probabilities $p_1, \dots, p_n$ are not assumed to be equal. Define
         \begin{align*}
         \text{Var}(S_n) &= \text{Var}\left(\sum_{i=1}^n X_i\right) \\
         &= \sum_{i=1}^n \text{Var}(X_i) \\
-        \text{Var}(S_n) &= \sum_{i=1}^n p_i(1 - p_i).
         \end{align*}
+        \[             \boxed{\text{Var}(S_n) = \sum_{i=1}^n p_i(1 - p_i).}        \]
     \end{list}
     \item Construct two different sets of four probabilities $(p_1, p_2, p_3, p_4)$ that yield the same value of $\mathbb{E}(S_4)$ but different values of $\text{Var}(S_4)$. Verify both claims algebraically.
     \vspace{0.5em}
@@ -261,7 +391,7 @@ where the probabilities $p_1, \dots, p_n$ are not assumed to be equal. Define
             \end{align*}
         \end{itemize}
 
-        SInce both sets yield the same expected value $\mathbb{E}(S_4) = 2$, however it have a distinct variances $\text{Var}(S_4)_A = 0.76 \neq 0 = \text{Var}(S_4)_B$.
+        Since both sets yield the same expected value $\mathbb{E}(S_4) = 2$, however it have a distinct variances $\text{Var}(S_4)_A = 0.76 \neq 0 = \text{Var}(S_4)_B$.
     \end{list}
 \end{enumerate}
 
@@ -313,17 +443,22 @@ and $f_{X,Y}(x, y) = 0$ otherwise.
     \begin{list}{}{} \item[] 
         \textbf{Answer:}
         
-        By edefinition, a valid joint probability random function must satisfy $\iint_{\mathcal{S}} f_{X,Y}(x,y) \, dA = 1$. Thus, integrating over $0 < y < x < 1$,
+        By definition, a valid joint probability density function must satisfy
+        \[
+        \iint_{\mathcal{S}} f_{X,Y}(x,y) \, dA = 1.
+        \]
+        Integrating over the region $0 < y < x < 1$:
         \begin{align*}
         1 &= \int_{0}^{1} \int_{0}^{x} c(x + y) \, dy \, dx  \\
         &= c \int_{0}^{1} \left[ xy + \frac{y^2}{2} \right]_{y=0}^{y=x} \, dx  \\
         &= c \int_{0}^{1} \left( x^2 + \frac{x^2}{2} \right) \, dx  \\
         &= c \int_{0}^{1} \frac{3}{2}x^2 \, dx \\
-        &= c \left[ \frac{1}{2}x^3 \right]_{0}^{1} = c \left( \frac{1}{2} \right).
+        &= c \left[ \frac{1}{2}x^3 \right]_{0}^{1}\\ 
+        1 & = c \left( \frac{1}{2} \right).
         \end{align*}
 
-        Setting $\frac{c}{2} = 1$. Therefore,
-        \[        c = 2     \]
+        Therefore,
+        \[         \boxed{c = 2  }   \]
     \end{list}
     \item Derive the marginal densities $f_X(x)$ and $f_Y(y)$, including their supports.
     \vspace{0.5em}
@@ -334,36 +469,34 @@ and $f_{X,Y}(x, y) = 0$ otherwise.
 
         \vspace{0.5em}
         \noindent By definition, the marginal probability random function of $X$ is
-        \[
-        f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x,y) \, dy
+        \[        f_X(x) = \int_{-\infty}^{\infty} f_{X,Y}(x,y) \, dy
         \]
         For $x \in (0, 1)$, the inequality $0 < y < x < 1$. Then,
         \begin{align*}
         f_X(x) &= \int_{0}^{x} 2(x + y) \, dy \\
         &= 2 \left[ xy + \frac{y^2}{2} \right]_{y=0}^{y=x} \\
         &= 2 \left( x(x) + \frac{x^2}{2} - 0 \right) \\
-        &= 2 \left( \frac{3}{2}x^2 \right) = 3x^2.
+        f_X(x) &= 2 \left( \frac{3}{2}x^2 \right) 
         \end{align*}
+        \[             \boxed{f_X(x)= 3x^2.}        \]
         Therefore,
-        \[
-        f_X(x) = \begin{cases} 3x^2, & 0 < x < 1 \\ 0, & \text{otherwise} \end{cases}
+        \[        f_X(x) = \begin{cases} 3x^2, & 0 < x < 1 \\ 0, & \text{otherwise} \end{cases}
         \]
 
         \vspace{0.5em}
         \noindent Similarly, the marginal probability random function of $Y$ is
-        \[
-        f_Y(y) = \int_{-\infty}^{\infty} f_{X,Y}(x,y) \, dx
+        \[        f_Y(y) = \int_{-\infty}^{\infty} f_{X,Y}(x,y) \, dx
         \]
         For $y \in (0, 1)$, the inequality is $0 < y < x < 1$. Then,
         \begin{align*}
         f_Y(y) &= \int_{y}^{1} 2(x + y) \, dx \\
         &= 2 \left[ \frac{x^2}{2} + xy \right]_{x=y}^{x=1} \\
         &= 2 \left[ \left( \frac{1^2}{2} + (1)y \right) - \left( \frac{y^2}{2} + y(y) \right) \right] \\
-        &= 2 \left[ \frac{1}{2} + y - \frac{3}{2}y^2 \right] = 1 + 2y - 3y^2.
+        f_Y(y) &= 2 \left[ \frac{1}{2} + y - \frac{3}{2}y^2 \right] 
         \end{align*}
+        \[             \boxed{f_Y(y)= 1 + 2y - 3y^2.}        \]
         Therefore,
-        \[
-        f_Y(y) = \begin{cases} 1 + 2y - 3y^2, & 0 < y < 1 \\ 0, & \text{otherwise} \end{cases}
+        \[        f_Y(y) = \begin{cases} 1 + 2y - 3y^2, & 0 < y < 1 \\ 0, & \text{otherwise} \end{cases}
         \]
     \end{list}
     \item Derive the conditional density $f_{Y \mid X}(y \mid x)$ and state its conditional support.
@@ -376,9 +509,9 @@ and $f_{X,Y}(x, y) = 0$ otherwise.
        Then, 
        \begin{align*}
         f_{Y \mid X}(y \mid x) &= \frac{f_{X,Y}(x,y)}{f_X(x)} \\
-        &= \frac{2(x + y)}{3x^2} \\
-        &= \frac{2}{3x} + \frac{2y}{3x^2}, 
+        &= \frac{2(x + y)}{3x^2} \\ 
         \end{align*}
+        \[             \boxed{f_{Y \mid X}(y \mid x) = \frac{2}{3x} + \frac{2y}{3x^2},}        \]
         Therefore,
         \[ 
 f_{Y \mid X}(y \mid x) = \begin{cases} \dfrac{2(x+y)}{3x^2}, & 0 < y < x \\ 0, & \text{otherwise} \end{cases} 
@@ -399,9 +532,8 @@ f_{Y \mid X}(y \mid x) = \begin{cases} \dfrac{2(x+y)}{3x^2}, & 0 < y < x \\ 0, &
         &= \frac{2}{3x^2} \left( \frac{x(x^2)}{2} + \frac{x^3}{3} - 0 \right) \\
         &= \frac{2}{3x^2} \left( \frac{x^3}{2} + \frac{x^3}{3} \right) \\
         &= \frac{2}{3x^2} \left( \frac{5x^3}{6} \right) \\
-        &= \frac{10 x^3}{18 x^2} = \frac{5}{9}x \quad 
         \end{align*}
-
+        \[         \boxed{\mathbb{E}(Y \mid X = x) = \frac{5}{9}x \quad}.\]
         Therefore,
         \[        \mathbb{E}(Y \mid X = x) = \frac{5}{9}x \quad \text{for } 0 < x < 1.\]
     \end{list}
@@ -417,8 +549,8 @@ f_{Y \mid X}(y \mid x) = \begin{cases} \dfrac{2(x+y)}{3x^2}, & 0 < y < x \\ 0, &
         &= \int_{0}^{1} x (3x^2) \, dx \\
         &= \int_{0}^{1} 3x^3 \, dx \\
         &= \left[ \frac{3}{4}x^4 \right]_0^1 \\
-        \mathbb{E}(X) &= \frac{3}{4}
         \end{align*}
+        \[             \boxed{\mathbb{E}(X) = \frac{3}{4}.}        \]
 
         \textbf{For $\mathbb{E}(Y)$:} \\
         Using the marginal density $f_Y(y) = 1 + 2y - 3y^2$ for $0 < y < 1$, then
@@ -429,8 +561,8 @@ f_{Y \mid X}(y \mid x) = \begin{cases} \dfrac{2(x+y)}{3x^2}, & 0 < y < x \\ 0, &
         &= \left[ \frac{y^2}{2} + \frac{2y^3}{3} - \frac{3y^4}{4} \right]_0^1 \\
         &= \frac{1}{2} + \frac{2}{3} - \frac{3}{4} \\
         &= \frac{6 + 8 - 9}{12} \\
-        \mathbb{E}(Y) &= \frac{5}{12}
         \end{align*}
+        \[             \boxed{        \mathbb{E}(Y) = \frac{5}{12}.}        \]
 
         \textbf{For $\mathbb{E}(XY)$:} \\
         Using the joint density $f_{X,Y}(x,y) = 2(x+y)$ over the support $0 < y < x < 1$, then
@@ -442,15 +574,16 @@ f_{Y \mid X}(y \mid x) = \begin{cases} \dfrac{2(x+y)}{3x^2}, & 0 < y < x \\ 0, &
        \begin{align*}
         \int_{0}^{x} (x^2 y + x y^2) \, dy &= \left[ \frac{x^2 y^2}{2} + \frac{x y^3}{3} \right]_{y=0}^{y=x} \\
         &= \frac{x^4}{2} + \frac{x^4}{3} \\
-        &= \frac{5x^4}{6}
+        \int_{0}^{x} (x^2 y + x y^2) \, dy &= \frac{5x^4}{6}
         \end{align*}
         Evaluating the outer integral,
         \begin{align*}
         \mathbb{E}(XY) &= 2 \int_{0}^{1} \frac{5x^4}{6} \, dx \\
         &= \frac{5}{3} \int_{0}^{1} x^4 \, dx \\
         &= \frac{5}{3} \left[ \frac{x^5}{5} \right]_0^1 \\
-        \mathbb{E}(XY) &= \frac{1}{3}
         \end{align*}
+        \[             \boxed{\mathbb{E}(XY) = \frac{1}{3}.}
+        \]
 
         \textbf{For $\text{Cov}(X, Y)$:} \\
         By definition of covariance,
@@ -461,9 +594,10 @@ f_{Y \mid X}(y \mid x) = \begin{cases} \dfrac{2(x+y)}{3x^2}, & 0 < y < x \\ 0, &
         \begin{align*}
         \text{Cov}(X,Y) &= \frac{1}{3} - \left( \frac{3}{4} \right) \left( \frac{5}{12} \right) \\
         &= \frac{1}{3} - \frac{15}{48} \\
-        &= \frac{16}{48} - \frac{15}{48} \\
-        &= \frac{1}{48}
+        &= \frac{16}{48} - \frac{15}{48} 
         \end{align*}
+                \[         \boxed{\text{Cov}(X, Y) = \frac{1}{48}.}
+        \]
         Therefore,
         \[
         \text{Cov}(X, Y) = \frac{1}{48}.
@@ -500,19 +634,102 @@ f_{Y \mid X}(y \mid x) = \begin{cases} \dfrac{2(x+y)}{3x^2}, & 0 < y < x \\ 0, &
 \subsection*{Problem 4. Zero Correlation and Dependence \hfill \mdseries[10 points]}
 
 Let
-\[
-X \sim \text{Uniform}(-1, 1),
-\]
+\[X \sim \text{Uniform}(-1, 1),\]
 and define
-\[
-Y = X^2.
-\]
+\[Y = X^2.\]
 
 \begin{enumerate}[(a)]
     \item Derive $\mathbb{E}(X)$, $\mathbb{E}(Y)$, and $\mathbb{E}(XY)$ from the distribution of $X$.
+    \vspace{0.5em}
+    \begin{list}{}{} \item[] % Creates the indented answer block
+        \textbf{Answer:}
+
+        For $X \sim \text{Uniform}(-1, 1)$, the probability density function is 
+        \[f_X(x) = \frac{1}{2} \quad \text{for } -1 < x < 1\]
+
+        \noindent\textbf{Then, for $\mathbb{E}(X)$:}
+        \begin{align*}
+        \mathbb{E}(X) &= \int_{-1}^{1} x \left( \frac{1}{2} \right) \, dx\\
+        & = \frac{1}{2} \left[ \frac{x^2}{2} \right]_{-1}^{1} \\
+        &= \frac{1}{2} \left( \frac{1}{2} - \frac{1}{2} \right) \\
+        \mathbb{E}(X) & = 0
+        \end{align*}
+
+        \noindent\textbf{For $\mathbb{E}(Y)$:}
+        \begin{align*}
+        \mathbb{E}(Y) &= \mathbb{E}(X^2)\\
+        &= \int_{-1}^{1} x^2 \left( \frac{1}{2} \right) \, dx \\
+        & = \frac{1}{2} \left[ \frac{x^3}{3} \right]_{-1}^{1}\\
+        & = \frac{1}{2} \left( \frac{1}{3} - \left(-\frac{1}{3}\right) \right) \\
+        \mathbb{E}(Y) & = \frac{1}{3}
+        \end{align*}
+
+        \noindent\textbf{For $\mathbb{E}(XY)$:}
+        \begin{align*}
+        \mathbb{E}(XY) &= \mathbb{E}(X^3)\\
+         &= \int_{-1}^{1} x^3 \left( \frac{1}{2} \right) \, dx \\
+         &= \frac{1}{2} \left[ \frac{x^4}{4} \right]_{-1}^{1} \\
+         &= \frac{1}{2} \left( \frac{1}{4} - \frac{1}{4} \right) \\
+         \mathbb{E}(XY)  &= 0
+        \end{align*}
+        Therefore,
+        \[       \boxed{ \mathbb{E}(X) = 0, \quad \mathbb{E}(Y) = \frac{1}{3}, \quad \text{and} \quad \mathbb{E}(XY) = 0.}
+        \]
+    \end{list}
     \item Show that $\text{Cov}(X, Y) = 0$.
+   \vspace{0.5em}
+    \begin{list}{}{} \item[] % Creates the indented answer block
+        \textbf{Answer:}
+        
+        Note that the covariance is
+        \[        \text{Cov}(X,Y) = \mathbb{E}(XY) - \mathbb{E}(X)\mathbb{E}(Y)        \]
+        From (a), $\mathbb{E}(XY) = 0$, $\mathbb{E}(X) = 0$, and $\mathbb{E}(Y) = \frac{1}{3}$. Then,
+       \begin{align*}
+        \text{Cov}(X,Y) &= \mathbb{E}(XY) - \mathbb{E}(X)\mathbb{E}(Y) \\
+        &= 0 - (0)\left(\frac{1}{3}\right) \\
+        &= 0 - 0
+        \end{align*}
+        \[        \boxed{\text{Cov}(X,Y) = 0}        \]
+    \end{list}
     \item Prove that $X$ and $Y$ are not independent. Your proof may not rely solely on the statement ``$Y$ is a function of $X$''; use a probability or conditional-distribution argument.
+    \vspace{0.5em}
+    \begin{list}{}{} \item[] 
+        
+        \textbf{Proof:}
+        
+        From Conditional Distribution Criterion for Independence, it states that if $X$ and $Y$ are independent, then
+        \[ \mathbb{P}(Y \in A \mid X=x) = \mathbb{P}(Y \in A). \]
+        Let $A = \left(\frac{1}{4}, 1\right)$, then $Y \in A$ if and only if $\frac{1}{4} < Y < 1$. \\Since $Y = X^2$, then
+        \[      \frac{1}{4} < Y < 1 \quad \text{if and only if} \quad \frac{1}{4} < X^2 < 1.        \]  
+
+        Hence, the probability $\mathbb{P}(Y \in A)$ is
+        \begin{align*}
+        \mathbb{P}(Y \in A) &= \mathbb{P}\left(\frac{1}{4} < X^2 < 1\right) \\
+        &= \mathbb{P}\left(X < -\frac{1}{2}\right) + \mathbb{P}\left(X > \frac{1}{2}\right) \\
+        &= \int_{-1}^{-1/2} \frac{1}{2} \, dx + \int_{1/2}^{1} \frac{1}{2} \, dx \\
+        &= \frac{1}{2}[x]_{-1}^{-1/2} + \frac{1}{2}[x]_{1/2}^{1} \\
+        &= \frac{1}{2} \left[ -\frac{1}{2} - (-1) \right] + \frac{1}{2} \left[ 1 - \frac{1}{2} \right] \\
+        &= \frac{1}{2}\left(\frac{1}{2}\right) + \frac{1}{2}\left(\frac{1}{2}\right) \\
+        &= \frac{1}{4} + \frac{1}{4} \\
+         \mathbb{P}(Y \in A) &= \frac{1}{2}
+        \end{align*}
+       Conversely, since $Y=X^2$, then conditioning on $X=x$ yields to
+       \[ \mathbb{P}(Y \in A \mid X=x) = 1\] 
+       strictly when $\frac{1}{2} < |x| \le 1$, and $0$ strictly when $|x| \le \frac{1}{2}$.\\
+        Hence, for $x \in (-1,1)$,
+        \[        \mathbb{P}(Y \in A \mid X=x) \neq \mathbb{P}(Y \in A)        \]
+        Thus, the conditional distribution of $Y$ given $X = x$ depends on $x$ and does not equal the marginal distribution of $Y$. 
+        Therefore, by the definition of independence on conditional distributions, $X$ and $Y$ are not independent. \hfill $\blacksquare$
+    \end{list}
     \item Explain, in no more than four mathematically precise sentences, why zero correlation fails to imply independence in this example.
+    \vspace{0.5em}
+    \begin{list}{}{} \item[] 
+        \textbf{Answer:}
+        
+        In the given example, the symmetry of $X \sim \text{Uniform}(-1, 1)$ about zero causes $\mathbb{E}[XY] = \mathbb{E}[X^3] = 0$ to cancel out, resulting in $\text{Cov}(X, Y) = 0$. 
+        However, given that $Y = X^2$, $Y$ creates a non-linear dependency on $X$. 
+        Therefore, the conditional density $f_{Y\mid X}(y\mid x)$ depends on $x$, which does not satisfy $f_{X,Y}(x,y) = f_X(x)f_Y(y)$.
+    \end{list}
 \end{enumerate}
 
 \vspace{1.5em}
@@ -533,7 +750,7 @@ and define
         Define $Y = X(1 - X)$. Since $0 < x < 1$, then
         \[        0 < x(1 - x) < \frac{1}{4}        \]
         Therefore,
-        \[        0 < y < \frac{1}{4}        \]
+        \[        \boxed{ 0 < y < \frac{1}{4}  }      \]
     \end{list}
     \item Show that the transformation $y = x(1 - x)$ is not one-to-one on $(0, 1)$, and obtain all inverse branches $x = x(y)$.
     \vspace{0.5em}
@@ -553,7 +770,7 @@ and define
         Thus,
         \[        x = \frac{1 \pm \sqrt{1 - 4y}}{2} .       \]
         Therefore, the two inverse branches are
-        \[        x_1(y) = \frac{1 + \sqrt{1 - 4y}}{2} \quad \text{and} \quad x_2(y) = \frac{1 - \sqrt{1 - 4y}}{2}
+        \[         \boxed{x_1(y) = \frac{1 + \sqrt{1 - 4y}}{2} \quad \text{and} \quad x_2(y) = \frac{1 - \sqrt{1 - 4y}}{2}}
         \]
     \end{list}
     \item Using the CDF method, derive $F_Y(y)$ for all real $y$. Your derivation must explicitly account for both inverse branches.
@@ -570,8 +787,8 @@ and define
         Thus substituting the branches,
         \begin{align*}
         F_Y(y) &= \frac{1 + \sqrt{1 - 4y}}{2} + \left[ 1 - \frac{1 - \sqrt{1 - 4y}}{2} \right] \\
-        &= 1 - \sqrt{1 - 4y}
         \end{align*}
+        \[  \boxed{     F_Y(y)= 1 - \sqrt{1 - 4y}}\]
         Therefore,
         \[        F_Y(y) = \begin{cases} 0, & y \le 0 \\ 1 - \sqrt{1 - 4y}, & 0 < y < \dfrac{1}{4} \\ 1, & y \ge \dfrac{1}{4} \end{cases}
         \]
@@ -582,12 +799,12 @@ and define
     \begin{list}{}{} \item[] 
         \textbf{Answer:}
         
-        Differentiate $F_Y(y)$ with respect to $y$:
+        Differentiate $F_Y(y)$ with respect to $y$,
         \begin{align*}
         f_Y(y) &= \frac{d}{dy} \left[ 1 - \sqrt{1 - 4y} \right] \\
         &= -\frac{1}{2} (1 - 4y)^{-\frac{1}{2}} (-4) \\
-        f_Y(y) &= \frac{2}{\sqrt{1 - 4y}}
         \end{align*}
+                \[  \boxed{        f_Y(y) = \frac{2}{\sqrt{1 - 4y}}}\]
         Therefore,
         \[
         f_Y(y) = \begin{cases} \dfrac{2}{\sqrt{1 - 4y}}, & 0 < y < \dfrac{1}{4} \\ 0, & \text{otherwise} \end{cases}
@@ -602,9 +819,10 @@ and define
         \begin{align*}
         \int_{0}^{\frac{1}{4}} \frac{2}{\sqrt{1 - 4y}} \, dy &= \left[ -\sqrt{1 - 4y} \right]_0^{\frac{1}{4}} \\
         &= -\sqrt{1 - 4\left(\frac{1}{4}\right)} - \left[ -\sqrt{1 - 4(0)} \right] \\
-        &= -\sqrt{0} - (-\sqrt{1}) \\
-        \int_{0}^{\frac{1}{4}} \frac{2}{\sqrt{1 - 4y}} \, dy &= 1
+        &= -\sqrt{0} - (-\sqrt{1}) 
         \end{align*}
+        \[         \boxed{\int_{0}^{\frac{1}{4}} \frac{2}{\sqrt{1 - 4y}} \, dy = 1}
+        \]
         Therefore,
         \[        \int_{0}^{\frac{1}{4}} \frac{2}{\sqrt{1 - 4y}} \, dy = 1
         \]
@@ -628,7 +846,7 @@ and define
         E(X) &= \int_{0}^{1} x(1) \, dx \\
         &= \left[ \frac{x^2}{2} \right]_0^1 \\
         &= \frac{1^2}{2} - \frac{0^2}{2}  \\
-        &= \frac{1}{2}
+         E(X) &= \frac{1}{2}
         \end{align*}
 
         \noindent Evaluating $E(X^2)$:
@@ -636,7 +854,7 @@ and define
         E(X^2) &= \int_{0}^{1} x^2(1) \, dx \\
         &= \left[ \frac{x^3}{3} \right]_0^1 \\
         &= \frac{1^3}{3} - \frac{0^3}{3} \\
-        &= \frac{1}{3}
+         E(X^2) &= \frac{1}{3}
         \end{align*}
       \noindent From the Linearity of Expectation,
         \[E(X - X^2) = E(X) - E(X^2).\]
@@ -653,13 +871,11 @@ and define
 
         \vspace{0.5em}
         From the definition of Expected value of a continuous random variable, 
-        \[
-        \mu = E(Y) = \int_{-\infty}^{\infty} y f_Y(y) \, dy
+        \[        \mu = E(Y) = \int_{-\infty}^{\infty} y f_Y(y) \, dy
         \]
 
         \noindent Then,
-        \[
-        E(Y) = \int_{0}^{\frac{1}{4}} y \left( \frac{2}{\sqrt{1 - 4y}} \right) dy
+        \[        E(Y) = \int_{0}^{\frac{1}{4}} y \left( \frac{2}{\sqrt{1 - 4y}} \right) dy
         \]
        Let $u = \sqrt{1 - 4y}$ (where $u^2 = 1 - 4y \implies y = \frac{1 - u^2}{4}$ and $du = -\frac{2}{\sqrt{1 - 4y}} \, dy \implies \left(\frac{2}{\sqrt{1 - 4y}}\right) dy = -du$), with bounds $y = 0 \to u = 1$ and $y = \frac{1}{4} \to u = 0$. Then,
         \begin{align*}
@@ -670,11 +886,10 @@ and define
         E(Y) &= \int_{0}^{1} \frac{1 - u^2}{4} \, du \\
         &= \frac{1}{4} \left[ u - \frac{u^3}{3} \right]_0^1 \\
         &= \frac{1}{4} \left( 1 - \frac{1}{3} \right) - \frac{1}{4} \left( 0 - \frac{0}{3} \right) \\
-        &= \frac{1}{4} \left( \frac{2}{3} \right) \\
-        &= \frac{1}{6}
+        &= \frac{1}{4} \left( \frac{2}{3} \right)
         \end{align*}
-
-        Since $E(Y) = \dfrac{1}{6}$. Therefore, the two methods of computing $\mathbb{E}(Y)$ agree.
+                \[  \boxed{E(Y)= \frac{1}{6}}\]
+        Since $E(Y) = \dfrac{1}{6}$.  Therefore, the two methods of computing $\mathbb{E}(Y)$ agree.
     \end{list}
 \end{enumerate}
 
@@ -709,7 +924,7 @@ where $\alpha > 0$ and $\beta > 0$. Define the transformation
         y&= u(1 - v)
         \end{align*}
         Therefore,
-        \[        x(u,v) = uv \quad \text{and} \quad y(u,v) = u(1-v).        \]
+        \[         \boxed{x(u,v) = uv \quad \text{and} \quad y(u,v) = u(1-v).}        \]
     \end{list}
     \item Determine the transformed support of $(U, V)$ directly from $x > 0$ and $y > 0$.
     \vspace{0.5em}
@@ -734,13 +949,13 @@ where $\alpha > 0$ and $\beta > 0$. Define the transformation
         &\implies v < 1
         \end{align*}
         Therefore,
-        \[        u > 0 \quad \text{and} \quad 0 < v < 1.        \]
+        \[         \boxed{u > 0 \quad \text{and} \quad 0 < v < 1.}        \]
     \end{list}
     \item Compute the Jacobian determinant
     \[    \left| \frac{\partial(x, y)}{\partial(u, v)} \right|    \]
     from the derivative matrix.
      \vspace{0.5em}
-    \begin{list}{}{} \item[] % Creates the indented answer block
+    \begin{list}{}{} \item[]
         \textbf{Answer:}
         
         Note that from (a), $x(u,v) = uv$ and $y(u,v) = u(1-v)$.
@@ -756,13 +971,13 @@ where $\alpha > 0$ and $\beta > 0$. Define the transformation
         \end{align*}
         Therefore,
         \begin{align*}
-            |J| &= |-u| \\
-            |J| & = u 
+            |J| &= |-u|
         \end{align*}
+         \[  \boxed{|J| = u }\]
     \end{list}
     \item Derive the joint density $f_{U,V}(u, v)$, including the support.
     \vspace{0.5em}
-    \begin{list}{}{} \item[] % Creates the indented answer block
+    \begin{list}{}{} \item[]
         \textbf{Answer:}
         
         Since $X$ and $Y$ are independent random variables, the joint probability density function is
@@ -783,17 +998,82 @@ where $\alpha > 0$ and $\beta > 0$. Define the transformation
     
         From (c), the $|J| = u$. Then,
         \begin{align*}
-        f_{U,V}(u,v) &= \left( \frac{u^{\alpha+\beta-2} v^{\alpha-1} (1-v)^{\beta-1} e^{-u}}{\Gamma(\alpha)\Gamma(\beta)} \right) \cdot u \\
-        &= \frac{u^{\alpha+\beta-1} e^{-u}}{\Gamma(\alpha)\Gamma(\beta)} \, v^{\alpha-1} (1-v)^{\beta-1}
+        f_{U,V}(u,v) &= \left( \frac{u^{\alpha+\beta-2} v^{\alpha-1} (1-v)^{\beta-1} e^{-u}}{\Gamma(\alpha)\Gamma(\beta)} \right) \cdot u 
         \end{align*}
+                \[  \boxed{f_{U,V}(u,v) = \frac{u^{\alpha+\beta-1} e^{-u}}{\Gamma(\alpha)\Gamma(\beta)} \, v^{\alpha-1} (1-v)^{\beta-1}}\]
         Therefore,
         \[        f_{U,V}(u,v) = \begin{cases} \dfrac{u^{\alpha+\beta-1} e^{-u}}{\Gamma(\alpha)\Gamma(\beta)} \, v^{\alpha-1} (1-v)^{\beta-1}, & u > 0 \text{ and } 0 < v < 1 \\[1em] 0, & \text{otherwise} \end{cases}
         \]
     \end{list}
     \item Derive the marginal density of $U$ and identify its distribution.
+    \vspace{0.5em}
+    \begin{list}{}{} \item[] % Creates the indented answer block
+        \textbf{Answer:}
+        \begin{align*}
+        f_U(u) &= \int_{0}^{1} \frac{u^{\alpha+\beta-1} e^{-u}}{\Gamma(\alpha)\Gamma(\beta)} \, v^{\alpha-1} (1-v)^{\beta-1} \, dv \\
+        &= \frac{u^{\alpha+\beta-1} e^{-u}}{\Gamma(\alpha)\Gamma(\beta)} \int_{0}^{1} v^{\alpha-1} (1-v)^{\beta-1} \, dv \\
+        &= \frac{u^{\alpha+\beta-1} e^{-u}}{\Gamma(\alpha)\Gamma(\beta)} \cdot \frac{\Gamma(\alpha)\Gamma(\beta)}{\Gamma(\alpha+\beta)} \\
+         \end{align*}
+         \[  \boxed{f_U(u) = \frac{u^{\alpha+\beta-1} e^{-u}}{\Gamma(\alpha+\beta)} \quad }\]
+        Thus,
+        \[        f_U(u) = \begin{cases} \dfrac{u^{\alpha+\beta-1} e^{-u}}{\Gamma(\alpha+\beta)}, & u > 0 \\[1em] 0, & \text{otherwise} \end{cases}
+        \]
+        Therefore, 
+        $$U \sim \text{Gamma}(\alpha+\beta, 1).$$
+    \end{list}
     \item Derive the marginal density of $V$ and identify its distribution.
+    \vspace{0.5em}
+    \begin{list}{}{} \item[] 
+        \textbf{Answer:}
+        \begin{align*}
+        f_V(v) &= \int_{0}^{\infty} \frac{u^{\alpha+\beta-1} e^{-u}}{\Gamma(\alpha)\Gamma(\beta)} \, v^{\alpha-1} (1-v)^{\beta-1} \, du \\
+        &= \frac{v^{\alpha-1} (1-v)^{\beta-1}}{\Gamma(\alpha)\Gamma(\beta)} \int_{0}^{\infty} u^{(\alpha+\beta)-1} e^{-u} \, du \\
+        &= \frac{v^{\alpha-1} (1-v)^{\beta-1}}{\Gamma(\alpha)\Gamma(\beta)} \cdot \Gamma(\alpha+\beta) 
+        \end{align*}
+                \[  \boxed{f_V(v) = \frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)} \, v^{\alpha-1} (1-v)^{\beta-1} \quad }\]
+        Thus,
+        \[
+        f_V(v) = \begin{cases} \dfrac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)} \, v^{\alpha-1} (1-v)^{\beta-1}, & 0 < v < 1 \\[1em] 0, & \text{otherwise} \end{cases}
+        \]
+        Therefore, 
+        $$V \sim \text{Beta}(\alpha, \beta).$$
+    \end{list}
     \item Determine whether $U$ and $V$ are independent. Justify your conclusion by factorizing the joint density, not by inspection alone.
+    \vspace{0.5em}
+    \begin{list}{}{} \item[]
+        \textbf{Answer:}
+        
+        From (e) and (f), the marginal probability density functions of $U$ and $V$ are
+        \[        f_U(u) = \frac{u^{\alpha+\beta-1} e^{-u}}{\Gamma(\alpha+\beta)}, \quad u > 0
+        \]
+        \[        f_V(v) = \frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)} \, v^{\alpha-1} (1-v)^{\beta-1}, \quad 0 < v < 1
+        \]
+        Then,
+        \begin{align*}
+        f_U(u) \cdot f_V(v) &= \left( \frac{u^{\alpha+\beta-1} e^{-u}}{\Gamma(\alpha+\beta)} \right) \left( \frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha)\Gamma(\beta)} \, v^{\alpha-1} (1-v)^{\beta-1} \right) \\
+        &= \frac{u^{\alpha+\beta-1} e^{-u}}{\Gamma(\alpha)\Gamma(\beta)} \, v^{\alpha-1} (1-v)^{\beta-1} \\
+        f_U(u) \cdot f_V(v) &= f_{U,V}(u,v)
+        \end{align*}
+        Hence $f_{U,V}(u,v) = f_U(u) \cdot f_V(v)$ for all $u > 0$ and $0 < v < 1$ over the product support $\mathcal{T} = \{(u,v) : u > 0, \, 0 < v < 1\}$.\\
+        Therefore $U$ and $V$ are \textbf{independent}.
+    \end{list}
     \item Specialize your result to $\alpha = \beta = 1$. What is the distribution of $V$ in this case? Explain why this agrees with your general result.
+    \vspace{0.5em}
+    \begin{list}{}{} \item[] 
+        \textbf{Answer:}
+        
+        Since $\alpha = 1$ and $\beta = 1$, then
+        \begin{align*}
+        f_V(v) &= \frac{\Gamma(1+1)}{\Gamma(1)\Gamma(1)} \, v^{1-1} (1-v)^{1-1} \\
+        &= \frac{\Gamma(2)}{\Gamma(1)\Gamma(1)} \cdot 1 \cdot 1 \\ 
+        \end{align*}
+        \[  \boxed{f_V(v)  = \frac{1}{1} = 1 \quad}\]
+        Hence,
+        \[        f_V(v) = \begin{cases} 1, & 0 < v < 1 \\[0.5em] 0, & \text{otherwise} \end{cases}\]
+        For the general result $\text{Beta}(\alpha, \beta)$ evaluated at $\alpha = 1, \beta = 1$, a constant density of $1$ on $(0,1)$ is precisely the $\text{Uniform}(0,1)$ distribution, showing that $\text{Beta}(1,1) \equiv \text{Uniform}(0,1)$.\\
+        Therefore, 
+        $$V \sim \text{Uniform}(0, 1).$$
+    \end{list}
 \end{enumerate}
 
 \vspace{1.5em}
@@ -801,25 +1081,178 @@ where $\alpha > 0$ and $\beta > 0$. Define the transformation
 \subsection*{Problem 7. Order Statistics from First Principles \hfill \mdseries[14 points]}
 
 Let $X_1, X_2, \dots, X_n$ be independent and identically distributed continuous random variables with common CDF $F$ and PDF $f$. Define
-\[
-X_{(1)} = \min(X_1, \dots, X_n), \quad X_{(n)} = \max(X_1, \dots, X_n).
+\[X_{(1)} = \min(X_1, \dots, X_n), \quad X_{(n)} = \max(X_1, \dots, X_n).
 \]
 
 \begin{enumerate}[(a)]
     \item Starting from the event $\{X_{(n)} \le x\}$, derive the CDF and PDF of $X_{(n)}$. Do not quote a memorized order-statistic formula.
+    \vspace{0.5em}
+    \begin{list}{}{} \item[] 
+        \textbf{Answer:}
+        
+        Note that the event $\{X_{(n)} \le x\}$ occurs if and only if the maximum of all $n$ random variables is less than or equal to $x$. Thus, every individual random variable $X_i$ must be less than or equal to $x$.
+       \noindent Hence,
+        \[
+        \{X_{(n)} \le x\} = \{X_1 \le x, X_2 \le x, \dots, X_n \le x\}
+        \]
+        \[        \{X_{(n)} \le x\} = \bigcap_{i=1}^{n} \{X_i \le x\}
+        \]
+        By definition, the cumulative distribution function of $X_{(n)}$ is
+        \[        F_{X_{(n)}}(x) = P(X_{(n)} \le x)        \]
+        Since $X_1, X_2, \dots, X_n$ are independent and identically distributed, then
+        \begin{align*}
+        F_{X_{(n)}}(x) &= P\left( \bigcap_{i=1}^{n} \{X_i \le x\} \right) \\
+        &= \prod_{i=1}^{n} P(X_i \le x) \\
+        &= \prod_{i=1}^{n} F(x) 
+        \end{align*}
+        \[ \boxed{F_{X_{(n)}}(x) = [F(x)]^n.}\]
+        Therefore, the cumulative distribution function is
+        \[F_{X_{(n)}}(x) = [F(x)]^n.\]
+
+        Then, differentiating $F_{X_{(n)}}(x)$ with respect to $x$,
+        \begin{align*}
+        f_{X_{(n)}}(x) &= \frac{d}{dx} F_{X_{(n)}}(x) \\
+        &= \frac{d}{dx} \left( [F(x)]^n \right) \\
+        &= n [F(x)]^{n-1} \cdot \frac{d}{dx} F(x) 
+        \end{align*}
+        \[        \boxed{f_{X_{(n)}}(x) = n [F(x)]^{n-1} f(x).    }    \]
+        Therefore, the probability density function is
+        \[        f_{X_{(n)}}(x) = n [F(x)]^{n-1} f(x).        \]
+
+    \end{list}
     \item Starting from the event $\{X_{(1)} > x\}$, derive the CDF and PDF of $X_{(1)}$.
+    \vspace{0.5em}
+    \begin{list}{}{} \item[] 
+        \textbf{Answer:}
+                
+        Note that the event that the minimum of $n$ random variables exceeds $x$ is equivalent to all $n$ random variables individually exceeding $x$.
+        Hence if $\{X_{(1)} > x\}$ is the minimum, then
+        \[        \{X_1 > x, X_2 > x, \dots, X_n > x\}        \]
+        \[        \{X_{(1)} > x\} = \bigcap_{i=1}^{n} \{X_i > x\}        \]
+        Since $X_1, X_2, \dots, X_n$ are  independent and identically distributed with common cumulative distribution function $F(x)$, $P(X_i > x) = 1 - F(x)$:
+        \begin{align*}
+        P(X_{(1)} > x) &= P\left( \bigcap_{i=1}^{n} \{X_i > x\} \right) \\
+        &= \prod_{i=1}^{n} P(X_i > x) \\
+        &= \prod_{i=1}^{n} [1 - F(x)] \\
+         P(X_{(1)} > x) &= [1 - F(x)]^n
+        \end{align*}
+        Note that the complement rule is defined as
+        \[      P(A) = 1 - P(A^c).      \]
+        Hence, the cumulative distribution function of $X_{(1)}$ is
+        \begin{align*}
+        F_{X_{(1)}}(x) &= P(X_{(1)} \le x) \\
+        & = 1 - P(X_{(1)} > x) \\
+        \end{align*}
+        \[\boxed{F_{X_{(1)}}(x) = 1 - [1 - F(x)]^n.}\]
+        Therefore, the cumulative distribution function is
+        \[F_{X_{(1)}}(x) = 1 - [1 - F(x)]^n.\]
+        Differentiating $F_{X_{(1)}}(x)$ with respect to $x$, then
+        \begin{align*}
+        f_{X_{(1)}}(x) &= \frac{d}{dx} F_{X_{(1)}}(x) \\
+        &= \frac{d}{dx} \left( 1 - [1 - F(x)]^n \right) \\
+        &= -n [1 - F(x)]^{n-1} \cdot \frac{d}{dx} \big( 1 - F(x) \big) \\
+        &= -n [1 - F(x)]^{n-1} \cdot (-f(x)) \\
+        \end{align*}
+        \[  \boxed{ f_{X_{(1)}}(x) = n [1 - F(x)]^{n-1} f(x)}\]
+        Therefore, the probability density function is
+        \[       f_{X_{(1)}}(x)= n [1 - F(x)]^{n-1} f(x).        \]
+    \end{list}
     \item For $a < b$, derive
-    \[
-    P(X_{(1)} > a, X_{(n)} < b)
-    \]
+    \[    P(X_{(1)} > a, X_{(n)} < b)    \]
     in terms of $F(a)$ and $F(b)$. State any continuity assumptions you use.
+   \vspace{0.5em}
+    \begin{list}{}{} \item[] 
+        \textbf{Answer:}
+        
+       The joint event $\{X_{(1)} > a, X_{(n)} < b\}$ occurs if and only if the sample minimum is strictly greater than $a$ and the sample maximum is strictly less than $b$. Thus, every event must be $> a$ and $< b$. Hence,
+        \begin{align*}
+        \{X_{(1)} > a, \, X_{(n)} < b\} &= \{a < X_1 < b, \, a < X_2 < b, \, \dots, \, a < X_n < b\} \\
+        &= \bigcap_{i=1}^{n} \{a < X_i < b\}
+        \end{align*}
+        Then, by taking the probability of the joint event,
+        \[        P(X_{(1)} > a, \, X_{(n)} < b) = P\left( \bigcap_{i=1}^{n} \{a < X_i < b\} \right)
+        \]
+        By the independence of $X_1, X_2, \dots, X_n$, then
+        \[
+        P(X_{(1)} > a, \, X_{(n)} < b) = \prod_{i=1}^{n} P(a < X_i < b)        \]
+        Since $X_1, X_2, \dots, X_n$ are identically distributed with common CDF $F(x)$, then
+        \begin{align*}
+        P(a < X_i < b) &= F(b) - F(a) 
+        \end{align*}
+                \[  \boxed{P(a < X_i < b) = \prod_{i=1}^{n} [F(b) - F(a)]}\]
+        Therefore,
+        \[        P(X_{(1)} > a, \, X_{(n)} < b) = [F(b) - F(a)]^n        \]
+    \end{list}
     \item Now suppose $X_1, \dots, X_n \sim \text{Uniform}(0, \theta)$, where $\theta > 0$. Derive the PDFs of $X_{(1)}$ and $X_{(n)}$ explicitly.
+    \vspace{0.5em}
+    \begin{list}{}{} \item[] 
+        \textbf{Answer:}
+        
+        For $X_i \sim \text{Uniform}(0, \theta)$, the common PDF and CDF on $0 < x < \theta$ are
+        \[
+        f(x) = \frac{1}{\theta} \quad \text{and} \quad F(x) = \frac{x}{\theta}
+        \]
+        
+        Using the formula $f_{X_{(n)}}(x) = n [F(x)]^{n-1} f(x)$ from (a):
+        \begin{align*}
+        f_{X_{(n)}}(x) &= n \left( \frac{x}{\theta} \right)^{n-1} \left( \frac{1}{\theta} \right)  
+        \end{align*}
+                \[  \boxed{f_{X_{(n)}}(x) = \frac{n x^{n-1}}{\theta^n} \quad}\]
+        Therefore, the cumulative distribution function is
+        \[        f_{X_{(n)}}(x) = \begin{cases} \dfrac{n x^{n-1}}{\theta^n}, & 0 < x < \theta \\[1em] 0, & \text{otherwise}. \end{cases}
+        \]
+        
+        By $1 - F(x) = 1 - \frac{x}{\theta} = \frac{\theta - x}{\theta}$ and the formula $f_{X_{(1)}}(x) = n [1 - F(x)]^{n-1} f(x)$ from (b), then
+        \begin{align*}
+        f_{X_{(1)}}^{}(x) &= n \left( \frac{\theta - x}{\theta} \right)^{n-1} \left( \frac{1}{\theta} \right)  
+        \end{align*}
+        \[  \boxed{f_{X_{(1)}}^{}(x) = \frac{n (\theta - x)^{n-1}}{\theta^n} \quad}\]
+        Therefore,  the probability density function is
+        \[        f_{X_{(1)}}(x) = \begin{cases} \dfrac{n (\theta - x)^{n-1}}{\theta^n}, & 0 < x < \theta \\[1em] 0, & \text{otherwise}. \end{cases}
+        \]
+    \end{list}
     \item For the $\text{Uniform}(0, \theta)$ case, derive $\mathbb{E}[X_{(n)}]$ from its density.
+    \vspace{0.5em}
+    \begin{list}{}{} \item[] 
+        \textbf{Answer:}
+        
+        By the definition of expected value for a continuous random variable,
+        \[        \mathbb{E}[X_{(n)}] = \int_{-\infty}^{\infty} x f_{X_{(n)}}(x) \, dx.        \]
+        Note that from (d), the probability density function is
+        \[        f_{X_{(n)}}(x) = \frac{n x^{n-1}}{\theta^n} \quad \text{for } 0 < x < \theta.        \]
+        Then,
+        \begin{align*}
+        \mathbb{E}[X_{(n)}] &= \int_{0}^{\theta} x \left( \frac{n x^{n-1}}{\theta^n} \right) \, dx \\
+        &= \frac{n}{\theta^n} \int_{0}^{\theta} x^n \, dx \\
+        &= \frac{n}{\theta^n} \left[ \frac{x^{n+1}}{n+1} \right]_{0}^{\theta} \\
+        &= \frac{n}{\theta^n} \left( \frac{\theta^{n+1}}{n+1} - 0 \right) \\
+        &= \frac{n \theta^{n+1}}{(n+1)\theta^n} \\
+        \end{align*}
+                \[        \boxed{\mathbb{E}[X_{(n)}] = \frac{n}{n+1} \theta}        \]
+        Therefore,
+        \[        \mathbb{E}[X_{(n)}] = \frac{n}{n+1} \theta        \]
+    \end{list}
     \item Find a constant $k_n$, depending only on $n$, such that
-    \[
-    \mathbb{E}[k_n X_{(n)}] = \theta.
-    \]
+    \[    \mathbb{E}[k_n X_{(n)}] = \theta.    \]
     Derive $k_n$ rather than guessing it.
+    \vspace{0.5em}
+    \begin{list}{}{} \item[] 
+        \textbf{Answer:}
+        
+        From the given formula $\mathbb{E}[k_n X_{(n)}] = \theta$, isolating $\mathbb{E}[X_{(n)}]$, then
+        \[        k_n \cdot \mathbb{E}[X_{(n)}] = \theta        \]
+        Note that from (e), the expected value is
+        \[        \mathbb{E}[X_{(n)}] = \frac{n}{n+1} \theta        \]
+       Hence,
+        \[
+        k_n \left( \frac{n}{n+1} \theta \right) = \theta        \]
+        \[        \frac{1}{\theta} \left( k_n \left( \frac{n}{n+1} \theta \right) = \theta \right) \frac{1}{\theta}
+        \]
+        \[        k_n \left( \frac{n}{n+1} \right) = 1        \]
+        \[        \boxed{k_n = \frac{n+1}{n}}        \]
+        Therefore,
+        \[        k_n = \frac{n+1}{n}        \]
+    \end{list}
 \end{enumerate}
 
 \vspace{1.5em}
@@ -830,25 +1263,75 @@ Consider the following argument about two random variables $X$ and $Y$:
 
 \begin{quote}
 ``Since $\text{Cov}(X, Y) = 0$, $X$ and $Y$ are independent. Therefore
-\[
-f_{X,Y}(x, y) = f_X(x) f_Y(y),
-\]
+\[f_{X,Y}(x, y) = f_X(x) f_Y(y),\]
 and consequently
-\[
-\mathbb{E}[XY] = \mathbb{E}[X] \mathbb{E}[Y].
-\]
+\[\mathbb{E}[XY] = \mathbb{E}[X] \mathbb{E}[Y].\]
 ''
 \end{quote}
 
 \begin{enumerate}[(a)]
     \item Identify the first logically invalid implication in the argument and explain precisely why it is invalid.
+    \vspace{0.5em}
+    \begin{list}{}{} \item[] 
+        \textbf{Answer:}
+
+        The logically invalid implication in the argument is the statement,
+        \[        \text{``Since } \text{Cov}(X,Y) = 0, \, X \text{ and } Y \text{ are independent.''}
+        \]
+        Independence implies zero covariance, but the converse does not hold always true. Having $\text{Cov}(X,Y) = 0$ implies there is no linear association, however, $X$ and $Y$ can still have a non-linear functional dependency. 
+        Moreover, independence requires that $f_{X,Y}(x,y) = f_X(x)f_Y(y)$ for all $(x,y)$.
+        Therefore, having only $\text{Cov}(X,Y) = 0$ does not implies independence.
+    \end{list}
     \item Using the random variables in Problem 4, provide a counterexample to the invalid implication.
+    \vspace{0.5em}
+    \begin{list}{}{} \item[]
+        \textbf{Answer:}
+                
+        Let $X \sim \text{Uniform}(-1, 1)$ and $Y = X^2$ from Problem 4.
+
+       From Problem 4(a), the expected values are:
+         \[\mathbb{E}[X] = 0, \quad \mathbb{E}[Y] = \frac{1}{3}, \quad \text{and} \quad \mathbb{E}[XY] = \mathbb{E}[X^3] = 0.\]
+        Note that the covariance is         
+        \[\text{Cov}(X,Y) = \mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y] = 0 - (0)\left(\frac{1}{3}\right) = 0
+        \]
+        Thus, $X$ and $Y$ have zero covariance.\\
+        Define 
+        $$Y = X^2.$$
+        Then $Y$ depends directly on the value of $X$,  making them mutually dependent. 
+        Note that independence should also satisfy 
+        $$f_{X,Y}(x,y) = f_X(x)f_Y(y).$$
+        The given distribution violates the necessary condition required for independence since $f_{Y \mid X}(y \mid x)$ varies with the value of x. \\
+        Therefore, $X$ and $Y$ are \textbf{dependent}. 
+
+        
+    \end{list}
     \item State a correct sufficient condition under which
-    \[
-    f_{X,Y}(x, y) = f_X(x) f_Y(y)
-    \]
+    \[    f_{X,Y}(x, y) = f_X(x) f_Y(y)    \]
     holds.
+    \vspace{0.5em}
+    \begin{list}{}{} \item[] 
+        \textbf{Answer:}
+        
+        A correct sufficient condition is to assume that the conditional distribution of $Y$ given $X = x$ does not depend on $x$ and equals the marginal distribution of $Y$ for all $x$ in the support where $f_X(x) > 0$. Thus, the joint distribution is
+        \[
+        f_{Y|X}(y \mid x) = f_Y(y) \quad \text{for all } x \text{ with } f_X(x) > 0 \text{}
+        \]
+    \end{list}
     \item Rewrite the original argument as a logically valid implication chain under an appropriate assumption.
+    \vspace{0.5em}
+    \begin{list}{}{} \item[] 
+        \textbf{Answer:}
+
+         Suppose that $(X, Y)$ independent.
+         Hence, their joint probability density function is
+        \[        f_{X,Y}(x,y) = f_X(x)f_Y(y)        \]
+        Then, by the definition of covariance,
+        \[        \text{Cov}(X,Y) = \mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y]        \]
+        Since $f_{X,Y}(x,y) = f_X(x)f_Y(y)$, then
+        \[       \mathbb{E}[XY] = \int_{-\infty}^{\infty} x f_X(x) \, dx \int_{-\infty}^{\infty} y f_Y(y) \, dy = \mathbb{E}[X]\mathbb{E}[Y]    \]
+        Therefore,
+        \[\text{Cov}(X,Y) = 0 .\]
+    \end{list}
 \end{enumerate}
 
 \end{document}
